@@ -92,6 +92,15 @@ const QUESTIONS = [
     explanation: "정약용이 도르래를 이용한 거중기를 설계했고, 정조 때 수원 화성 축성에 쓰임.",
     source: "한국민족문화대백과사전 「거중기」, https://encykorea.aks.ac.kr/Article/E0001891, 2026-10-09",
   },
+  {
+    id: "kh-11",
+    category: "한국사",
+    question: "1377년 청주 흥덕사에서 금속활자로 찍어 낸 불교서는?",
+    choices: ["직지심체요절", "상정고금예문", "삼국유사", "팔만대장경"],
+    answer: "직지심체요절",
+    explanation: "백운화상 경한이 부처와 조사의 가르침을 간추려 엮은 책으로, 1377년 7월에 찍음.",
+    source: "한국민족문화대백과사전 「직지심체요절 권하」, https://encykorea.aks.ac.kr/Article/E0071845, 2026-10-16",
+  },
 
   // 세계지리
   {
@@ -183,6 +192,15 @@ const QUESTIONS = [
     answer: "앙카라",
     explanation: "앙카라는 1923년 튀르키예 공화국의 수도가 됨. 이스탄불은 가장 큰 도시이지만 수도가 아님.",
     source: "Britannica \"Ankara, capital of Turkey\", https://www.britannica.com/summary/Ankara, 2026-10-09",
+  },
+  {
+    id: "wg-11",
+    category: "세계지리",
+    question: "이집트에서 지중해와 홍해를 잇는 운하는?",
+    choices: ["수에즈 운하", "파나마 운하", "킬 운하", "코린트 운하"],
+    answer: "수에즈 운하",
+    explanation: "해수면과 같은 높이로 흐르는 운하이며, 북쪽 끝은 포트사이드임.",
+    source: "Britannica \"Suez Canal\", https://www.britannica.com/topic/Suez-Canal, 2026-10-16",
   },
 
   // 과학
@@ -276,6 +294,15 @@ const QUESTIONS = [
     explanation: "제임스 왓슨과 프랜시스 크릭이 1953년 『네이처』에 DNA 이중 나선 모형을 발표함.",
     source: "Britannica \"Double helix\", https://www.britannica.com/science/double-helix, 2026-10-09",
   },
+  {
+    id: "sc-11",
+    category: "과학",
+    question: "1928년 포도상구균 배양 접시에 생긴 곰팡이에서 페니실린을 발견한 과학자는?",
+    choices: ["알렉산더 플레밍", "루이 파스퇴르", "로베르트 코흐", "에드워드 제너"],
+    answer: "알렉산더 플레밍",
+    explanation: "플레밍은 1945년 플로리, 체인과 함께 노벨 생리의학상을 공동 수상함.",
+    source: "NobelPrize.org \"Sir Alexander Fleming – Biographical\", https://www.nobelprize.org/prizes/medicine/1945/fleming/biographical/, 2026-10-16",
+  },
 
   // 예술과 문화
   {
@@ -367,5 +394,14 @@ const QUESTIONS = [
     answer: "파블로 피카소",
     explanation: "피카소가 1937년 파리 만국박람회 스페인관을 위해 그렸고 지금은 레이나 소피아 미술관에 있음.",
     source: "Museo Reina Sofía \"Guernica\", https://www.museoreinasofia.es/en/collections/artwork/guernica-0/, 2026-10-09",
+  },
+  {
+    id: "ac-11",
+    category: "예술과 문화",
+    question: "제주도 유배 중에 제자인 역관 이상적에게 그려 준 〈세한도〉의 화가는?",
+    choices: ["김정희", "정선", "장승업", "신윤복"],
+    answer: "김정희",
+    explanation: "김정희가 1844년에 그려 이상적에게 주었고, 지금은 국립중앙박물관이 소장함.",
+    source: "한국민족문화대백과사전 「김정희 필 세한도」, https://encykorea.aks.ac.kr/Article/E0038956, 2026-10-16",
   },
 ];
