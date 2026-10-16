@@ -30,7 +30,7 @@
 - 태스크마다 마지막에 그 태스크에서 바꾼 파일을 커밋함. 메시지는 `feat: Task N <태스크 제목>`(git 저장소는 2026-10-09에 만듦, 아직 커밋 없음)
 - 화면 문구는 PRD 4.2항의 문구를 그대로 씀: "순위표에 기록되지 않음", "상위 10위 밖", "순위표를 저장할 수 없음", [처음으로], [다음], [결과 보기], [힌트], [틀린 문제 다시 풀기], [순위표]
 - 문항, 보기, 해설을 화면에 넣을 때 `textContent`를 씀(문항에 `<`, `&`가 들어가도 그대로 보이게 함)
-- 점수 표기는 `점수/문항 수`(예: `7.5/10`, 다시 푼 판은 `3/4`)
+- 점수 표기는 `점수/문항 수`(예: 한 판이 10문항이면 `7.5/10`, 다시 푼 판은 `3/4`)
 
 ## 검토 초점
 
@@ -46,7 +46,7 @@ PRD가 말하지 않았으나 사용자가 겪기 쉬운 경우 5개. 각 줄의
 
 | 파일 | 맡는 일 | 만드는 태스크 |
 |---|---|---|
-| questions.js | 전역 `QUESTIONS` 배열, 40문항 | 1 |
+| questions.js | 전역 `QUESTIONS` 배열, 카테고리마다 같은 수의 문항 | 1 |
 | index.html | 화면별 `<section id="screen-…">`, 버튼 마크업. questions.js, script.js 순으로 읽음 | 2 |
 | style.css | 배치, 정답 보기와 고른 오답 보기의 색 | 2 |
 | script.js | `MODES`, `state`, 화면 전환, 채점, 타이머, 힌트, 다시 풀기, 순위표, 점검 함수 | 2 |
@@ -61,7 +61,7 @@ PRD가 말하지 않았으나 사용자가 겪기 쉬운 경우 5개. 각 줄의
 
 인터페이스
 - 내놓는 것: `const QUESTIONS = [{ id, category, question, choices, answer, explanation, source }]`(PRD 6.1항 형식)
-- id 약자: 한국사 `kh`, 세계지리 `wg`, 과학 `sc`, 예술과 문화 `ac`. 번호는 `01`~`10`
+- id 약자: 한국사 `kh`, 세계지리 `wg`, 과학 `sc`, 예술과 문화 `ac`. 번호는 `01`부터 두 자리로 이어 붙임
 
 - [x] Step 1: 한국사 10문항(`kh-01`~`kh-10`)을 씀
   - 문항마다 웹 자료로 정답을 대조함. 자료는 공공기관, 백과사전(예: 우리역사넷, 한국민족문화대백과사전)을 우선함
@@ -79,24 +79,25 @@ const fs = require("fs"), vm = require("vm");
 const ctx = {};
 vm.runInNewContext(fs.readFileSync("questions.js", "utf8") + "\nthis.Q = QUESTIONS;", ctx);
 const cats = ["한국사", "세계지리", "과학", "예술과 문화"];
-const errs = [];
+const errs = [], counts = [];
 for (const c of cats) {
   const n = ctx.Q.filter(q => q.category === c).length;
-  if (n !== 10) errs.push(`${c}: ${n}문항`);
+  counts.push(n);
+  if (n === 0) errs.push(`${c}: 0문항`);
 }
-if (ctx.Q.length !== 40) errs.push(`전체: ${ctx.Q.length}문항`);
+if (new Set(counts).size !== 1) errs.push(`카테고리마다 문항 수가 다름: ${counts.join(", ")}`);
 for (const q of ctx.Q) {
   if (!cats.includes(q.category)) errs.push(`${q.id}: 카테고리 ${q.category}`);
   if (q.choices.length !== 4 || new Set(q.choices).size !== 4) errs.push(`${q.id}: 보기 4개가 서로 다르지 않음`);
   if (q.choices.filter(c => c === q.answer).length !== 1) errs.push(`${q.id}: 정답이 보기에 정확히 1번 나오지 않음`);
   if (!q.explanation?.trim() || !q.source?.trim()) errs.push(`${q.id}: 해설 또는 출처가 비어 있음`);
 }
-console.log(errs.length ? errs.join("\n") : "문항 검사 통과: 40문항");
+console.log(errs.length ? errs.join("\n") : `문항 검사 통과: ${ctx.Q.length}문항`);
 process.exitCode = errs.length ? 1 : 0;
 EOF
 ```
 
-기대 출력: `문항 검사 통과: 40문항`
+기대 출력: `문항 검사 통과: N문항`(N은 전체 문항 수, 카테고리마다 같은 수)
 
 - [x] Step 6: `questions.js`를 커밋함
 
