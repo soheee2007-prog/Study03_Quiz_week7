@@ -101,6 +101,15 @@ const QUESTIONS = [
     explanation: "백운화상 경한이 부처와 조사의 가르침을 간추려 엮은 책으로, 1377년 7월에 찍음.",
     source: "한국민족문화대백과사전 「직지심체요절 권하」, https://encykorea.aks.ac.kr/Article/E0071845, 2026-10-16",
   },
+  {
+    id: "kh-12",
+    category: "한국사",
+    question: "왕명을 받아 의관 허준이 엮은 조선의 의학서는?",
+    choices: ["동의보감", "향약집성방", "의방유취", "동의수세보원"],
+    answer: "동의보감",
+    explanation: "2009년 유네스코 세계기록유산에 등재됨.",
+    source: "한국민족문화대백과사전 「동의보감」, https://encykorea.aks.ac.kr/Article/E0016731, 2026-10-16",
+  },
 
   // 세계지리
   {
@@ -201,6 +210,15 @@ const QUESTIONS = [
     answer: "수에즈 운하",
     explanation: "해수면과 같은 높이로 흐르는 운하이며, 북쪽 끝은 포트사이드임.",
     source: "Britannica \"Suez Canal\", https://www.britannica.com/topic/Suez-Canal, 2026-10-16",
+  },
+  {
+    id: "wg-12",
+    category: "세계지리",
+    question: "잠비아와 짐바브웨의 국경에 있는 빅토리아 폭포를 이루는 강은?",
+    choices: ["잠베지강", "콩고강", "림포포강", "오렌지강"],
+    answer: "잠베지강",
+    explanation: "현지 이름은 모시오아툰야이며, 1989년 세계유산으로 등재됨.",
+    source: "UNESCO World Heritage Centre \"Mosi-oa-Tunya / Victoria Falls\", https://whc.unesco.org/en/list/509/, 2026-10-16",
   },
 
   // 과학
@@ -303,6 +321,15 @@ const QUESTIONS = [
     explanation: "플레밍은 1945년 플로리, 체인과 함께 노벨 생리의학상을 공동 수상함.",
     source: "NobelPrize.org \"Sir Alexander Fleming – Biographical\", https://www.nobelprize.org/prizes/medicine/1945/fleming/biographical/, 2026-10-16",
   },
+  {
+    id: "sc-12",
+    category: "과학",
+    question: "1869년 원소들을 원자량 순으로 배열한 주기율표를 발표한 러시아의 화학자는?",
+    choices: ["드미트리 멘델레예프", "앙투안 라부아지에", "로베르트 분젠", "아메데오 아보가드로"],
+    answer: "드미트리 멘델레예프",
+    explanation: "주기율표의 빈자리에 들어갈 갈륨, 스칸듐, 저마늄이 1886년까지 모두 발견됨.",
+    source: "Britannica \"Dmitri Mendeleev\", https://www.britannica.com/biography/Dmitri-Mendeleev, 2026-10-16",
+  },
 
   // 예술과 문화
   {
@@ -403,5 +430,14 @@ const QUESTIONS = [
     answer: "김정희",
     explanation: "김정희가 1844년에 그려 이상적에게 주었고, 지금은 국립중앙박물관이 소장함.",
     source: "한국민족문화대백과사전 「김정희 필 세한도」, https://encykorea.aks.ac.kr/Article/E0038956, 2026-10-16",
+  },
+  {
+    id: "ac-12",
+    category: "예술과 문화",
+    question: "한 명의 소리꾼이 고수의 북장단에 맞추어 긴 이야기를 노래와 말로 엮어 가는 한국의 전통 공연 예술은?",
+    choices: ["판소리", "가곡", "범패", "탈춤"],
+    answer: "판소리",
+    explanation: "1964년 국가 무형문화재로 지정되어 보호·전승되고 있음.",
+    source: "한국민족문화대백과사전 「판소리」, https://encykorea.aks.ac.kr/Article/E0059663, 2026-10-16",
   },
 ];
