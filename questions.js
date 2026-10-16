@@ -110,6 +110,15 @@ const QUESTIONS = [
     explanation: "2009년 유네스코 세계기록유산에 등재됨.",
     source: "한국민족문화대백과사전 「동의보감」, https://encykorea.aks.ac.kr/Article/E0016731, 2026-10-16",
   },
+  {
+    id: "kh-13",
+    category: "한국사",
+    question: "1861년 김정호가 22첩의 목판본으로 만든 전국 지도는?",
+    choices: ["대동여지도", "동국지도", "청구도", "동여도"],
+    answer: "대동여지도",
+    explanation: "10리마다 점을 찍어 거리를 헤아릴 수 있게 함.",
+    source: "한국민족문화대백과사전 「대동여지도」, https://encykorea.aks.ac.kr/Article/E0014266, 2026-10-16",
+  },
 
   // 세계지리
   {
@@ -219,6 +228,15 @@ const QUESTIONS = [
     answer: "잠베지강",
     explanation: "현지 이름은 모시오아툰야이며, 1989년 세계유산으로 등재됨.",
     source: "UNESCO World Heritage Centre \"Mosi-oa-Tunya / Victoria Falls\", https://whc.unesco.org/en/list/509/, 2026-10-16",
+  },
+  {
+    id: "wg-13",
+    category: "세계지리",
+    question: "에콰도르에 속하며 1978년 세계유산으로 등재된 태평양의 섬 무리는?",
+    choices: ["갈라파고스 제도", "하와이 제도", "카나리아 제도", "아조레스 제도"],
+    answer: "갈라파고스 제도",
+    explanation: "화산 활동으로 생긴 섬들로, 거대한 거북 같은 독특한 동물이 삶.",
+    source: "UNESCO World Heritage Centre \"Galápagos Islands\", https://whc.unesco.org/en/list/1/, 2026-10-16",
   },
 
   // 과학
@@ -330,6 +348,15 @@ const QUESTIONS = [
     explanation: "주기율표의 빈자리에 들어갈 갈륨, 스칸듐, 저마늄이 1886년까지 모두 발견됨.",
     source: "Britannica \"Dmitri Mendeleev\", https://www.britannica.com/biography/Dmitri-Mendeleev, 2026-10-16",
   },
+  {
+    id: "sc-13",
+    category: "과학",
+    question: "1895년 음극선관 실험 중에 X선을 발견한 물리학자는?",
+    choices: ["빌헬름 뢴트겐", "앙리 베크렐", "어니스트 러더퍼드", "하인리히 헤르츠"],
+    answer: "빌헬름 뢴트겐",
+    explanation: "1901년 첫 노벨 물리학상을 받았고, 아내 손의 뼈를 찍은 최초의 X선 사진을 남김.",
+    source: "NobelPrize.org \"The Nobel Prize in Physics 1901 – Speed read\", https://www.nobelprize.org/prizes/physics/1901/speedread/, 2026-10-16",
+  },
 
   // 예술과 문화
   {
@@ -439,5 +466,14 @@ const QUESTIONS = [
     answer: "판소리",
     explanation: "1964년 국가 무형문화재로 지정되어 보호·전승되고 있음.",
     source: "한국민족문화대백과사전 「판소리」, https://encykorea.aks.ac.kr/Article/E0059663, 2026-10-16",
+  },
+  {
+    id: "ac-13",
+    category: "예술과 문화",
+    question: "경주 토함산에 화강암을 쌓아 만든 통일신라의 석굴 사원은?",
+    choices: ["석굴암", "분황사", "감은사", "황룡사"],
+    answer: "석굴암",
+    explanation: "김대성이 전생의 부모를 위해 세웠으며, 1995년 불국사와 함께 세계유산에 등재됨.",
+    source: "한국민족문화대백과사전 「경주 석굴암 석굴」, https://encykorea.aks.ac.kr/Article/E0028362, 2026-10-16",
   },
 ];
