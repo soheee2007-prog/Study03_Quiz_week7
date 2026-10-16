@@ -1,6 +1,6 @@
 ---
 description: questions.js의 문항을 CLAUDE.md의 문항 작성 규칙으로 점검한다 (점검만, 파일은 고치지 않음)
-argument-hint: [카테고리 이름 또는 문항 id, 비우면 전체 40문항]
+argument-hint: [카테고리 이름 또는 문항 id, 비우면 전체 문항]
 allowed-tools: Read, Grep, Glob, Bash(node:*)
 ---
 
@@ -15,7 +15,7 @@ questions.js의 문항을 CLAUDE.md의 "문항 작성 규칙"으로 점검하고
 
 ## 대상
 
-- `$ARGUMENTS`가 비어 있으면 40문항 전부
+- `$ARGUMENTS`가 비어 있으면 questions.js에 있는 문항 전부
 - 카테고리 이름(한국사, 세계지리, 과학, 예술과 문화)이면 그 카테고리의 문항
 - 문항 id(예: `kh-03`)이면 그 문항 하나. 쉼표로 여러 id를 줄 수 있음
 - 위 어느 것에도 맞지 않으면 점검하지 않고, 쓸 수 있는 값을 알려 준 뒤 멈춘다.
