@@ -83,6 +83,46 @@ function recordScore(mode, category, score, date = todayString()) {
   return { saved: true, rank: result.rank };
 }
 
+function renderLeaderboard() {
+  const board = loadLeaderboard();
+  const container = document.getElementById("leaderboard-list");
+  container.replaceChildren();
+  for (const mode of ["speed", "hint"]) {
+    for (const category of CATEGORIES) {
+      const title = document.createElement("h3");
+      title.textContent = `${MODES[mode].name} · ${category}`;
+      container.appendChild(title);
+      const list = board[`${mode}|${category}`];
+      if (!Array.isArray(list) || list.length === 0) {
+        const empty = document.createElement("p");
+        empty.className = "note";
+        empty.textContent = "기록 없음";
+        container.appendChild(empty);
+        continue;
+      }
+      const table = document.createElement("table");
+      const head = table.insertRow();
+      for (const label of ["순위", "날짜", "점수"]) {
+        const th = document.createElement("th");
+        th.textContent = label;
+        head.appendChild(th);
+      }
+      list.forEach((item, i) => {
+        const row = table.insertRow();
+        for (const value of [`${i + 1}`, item.date, `${item.score}`]) {
+          row.insertCell().textContent = value;
+        }
+      });
+      container.appendChild(table);
+    }
+  }
+}
+
+function showLeaderboard() {
+  renderLeaderboard();
+  showScreen("leaderboard");
+}
+
 function startCategory(category) {
   state.category = category;
   document.getElementById("mode-category").textContent = category;
@@ -237,6 +277,8 @@ function init() {
   document.querySelectorAll("[data-mode]").forEach(button => {
     button.addEventListener("click", () => startMode(button.dataset.mode));
   });
+  document.getElementById("leaderboard-button").addEventListener("click", showLeaderboard);
+  document.getElementById("leaderboard-home-button").addEventListener("click", () => showScreen("start"));
   document.getElementById("hint-button").addEventListener("click", useHint);
   document.getElementById("next-button").addEventListener("click", () => {
     if (state.index === state.questions.length - 1) showResult();
